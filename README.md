@@ -1,7 +1,11 @@
 # Blog
 
-A simple, small, Markdown powered blog engine made for personal sites & portfolios, 
+A simple, small, Markdown powered blog engine made for personal sites & portfolios,
 made with Laravel.
+
+## Demo
+
+Check https://iccode.net
 
 ## Features
 
@@ -11,7 +15,7 @@ made with Laravel.
 * Google Analytics integration
 * Disqus commenting system integration
 * Contact form SMTP mail
-* [Micro](https://www.w3.org/TR/microdata/) data ready for posts, 
+* [Micro](https://www.w3.org/TR/microdata/) data ready for posts,
 [read here](https://developers.google.com/search/docs/data-types/articles)
 
 ## Built with
@@ -21,7 +25,7 @@ made with Laravel.
 * [Bulma](http://bulma.io/) 0.3.1 CSS framework
 * No jQuery to be as light as possible
 
-The frontend is built with Laravel's blade templates, 
+The frontend is built with Laravel's blade templates,
 while the backend is built using Vue.
 
 ## Installation
@@ -33,7 +37,7 @@ and copy them into `.env` file.
 
 ### Admin user
 
-There is no user registration, user is being created with `php artisan db:seed` 
+There is no user registration, user is being created with `php artisan db:seed`
 based on the info type into `.env` file. In application's backend then you can
 change user's info, password, etc.
 
