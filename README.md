@@ -3,7 +3,7 @@
 A simple, small, Markdown powered blog engine made for personal sites & portfolios,
 made with Laravel.
 
-[blog screenshot](./screenshot.jpg?raw=true)
+![blog screenshot](screenshot.jpg)
 
 ## Demo
 
