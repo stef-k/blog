@@ -38,6 +38,16 @@ while the backend is built using Vue.
 See `.env.example` for relevant data (Email settings, user info, site URL, etc)
 and copy them into `.env` file.
 
+### Before running migrations
+
+Go to `blog/config/app.php` and comment out the following:
+
+` App\Providers\SettingsProvider::class,` in providers
+
+`'Settings' => App\Providers\SettingsProvider::class,` in aliases
+
+run `php artisan migrate`
+
 ### Admin user
 
 There is no user registration, user is being created with `php artisan db:seed`
