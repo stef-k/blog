@@ -32,7 +32,7 @@
                         <div class="columns">
                             <div class="column is-4">
                                 <figure class="image ">
-                                    <img src="{{ elixir('img/me.jpg')  }}" alt="Me" class="is-rounded anime anime-1">
+                                    <img src="{{ asset('img/me.jpg')  }}" alt="Me" class="is-rounded anime anime-1">
                                 </figure>
                                 <div class="content p-t-s">
                                     <h3 class="title is-4 has-text-centered">Technologies currently working or have
