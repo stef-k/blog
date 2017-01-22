@@ -17,6 +17,7 @@ Check https://iccode.net
 * Google Analytics integration
 * Disqus commenting system integration
 * Contact form SMTP mail
+* Google Recaptcha form protection
 * [Micro](https://www.w3.org/TR/microdata/) data ready for posts,
 [read here](https://developers.google.com/search/docs/data-types/articles)
 
