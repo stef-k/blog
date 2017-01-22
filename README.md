@@ -1,6 +1,6 @@
 # Blog
 
-A simple, small, Markdown powered blog engine made for personal sites & portfolios,
+A simple, small, Markdown powered blog engine for personal sites & portfolios,
 made with Laravel.
 
 ![blog screenshot](screenshot.jpg)
@@ -12,7 +12,7 @@ Check https://iccode.net
 ## Features
 
 * Blog posts types
-* Portfolio projects posts types
+* Portfolio posts types
 * Tags
 * Google Analytics integration
 * Disqus commenting system integration
@@ -35,14 +35,15 @@ while the backend is built using Vue.
 
 ### Site variables
 
-Clone, see `.env.example` for relevant data (Email settings, user info, site URL, etc)
+See `.env.example` for relevant data (Email settings, user info, site URL, etc)
 and copy them into `.env` file.
 
 ### Admin user
 
 There is no user registration, user is being created with `php artisan db:seed`
-based on the info type into `.env` file. In application's backend then you can
-change user's info, password, etc.
+based on the info typed into `.env` file.
+
+In application's backend you can change user's info, password, etc.
 
 ### Admin dashboard
 
