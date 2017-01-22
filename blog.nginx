@@ -23,6 +23,12 @@ server {
     include snippets/ssl-example.com.conf;
     include snippets/ssl-params.conf;
 
+    # cache
+    location ~* \.(ico|css|js|gif|jpeg|jpg|png|woff|ttf|otf|svg|woff2|eot)$ {
+        expires max;
+        add_header Pragma public;
+        add_header Cache-Control "public";
+    }
 
     location / {
         try_files $uri $uri/ /index.php?$query_string;
