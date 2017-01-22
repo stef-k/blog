@@ -23,11 +23,11 @@ server {
     include snippets/ssl-example.com.conf;
     include snippets/ssl-params.conf;
 
-    # cache
+    # cache use short expire date but also use etag on in nginx.conf
     location ~* ^.+.(ico|css|js|gif|jpeg|jpg|png|woff|ttf|otf|svg|woff2|eot)$ {
         # set root of public files (without the 'public' dir)
         root "/srv/www/blog/storage/app";
-        expires max;
+        expires 24d;
         add_header Pragma public;
         add_header Cache-Control "public";
     }
