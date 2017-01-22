@@ -1,47 +1,12 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Be right back.</title>
-
-        <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
-
-        <style>
-            html, body {
-                height: 100%;
-            }
-
-            body {
-                margin: 0;
-                padding: 0;
-                width: 100%;
-                color: #B0BEC5;
-                display: table;
-                font-weight: 100;
-                font-family: 'Lato', sans-serif;
-            }
-
-            .container {
-                text-align: center;
-                display: table-cell;
-                vertical-align: middle;
-            }
-
-            .content {
-                text-align: center;
-                display: inline-block;
-            }
-
-            .title {
-                font-size: 72px;
-                margin-bottom: 40px;
-            }
-        </style>
-    </head>
-    <body>
+@section('title', env('SITE_NAME') . ' | Server Error')
+@extends('layout.master')
+@section('content')
+    <section class="m-t-l p-l fade-in">
         <div class="container">
-            <div class="content">
-                <div class="title">Be right back.</div>
+            <div class="m-t-l has-text-centered">
+                <h1 class="title is-1">Server Error</h1>
+                <p class="subtitle">Something broke, fortunately it is written in log files for further investigation.</p>
             </div>
         </div>
-    </body>
-</html>
+    </section>
+@stop
