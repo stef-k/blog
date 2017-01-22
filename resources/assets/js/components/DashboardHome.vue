@@ -12,7 +12,7 @@
                 <p class="m-b-s">
                     There are <strong>2</strong> types of posts:<br>
                     <strong>Blog posts </strong>(articles) and <strong>projects</strong>
-                    (a portfollio post type),
+                    (a portfolio post type),
                     which in front-end are displayed differently. To mark a post as project simply add an
                     <span class="tag is-primary">is-project</span> tag.<br>
                     Both projects and posts are using
