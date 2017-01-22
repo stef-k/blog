@@ -73,7 +73,7 @@
 
             <div class="columns">
                 <div class="column is-full-mobile is-8 is-offset-2">
-                    <a href="{{ route('projects') }}" title="back to projects index">back to posts</a>
+                    <a href="{{ route('projects') }}" title="back to projects index">back to projects</a>
                 </div>
             </div>
         </div>
