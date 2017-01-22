@@ -98,7 +98,7 @@ var setupNotifications = function () {
 //   );
 // };
 
-var socialPopup = function () {
+var socialPopup = function (url, width, height) {
   var left = (screen.width / 2) - (width / 2);
   var top = (screen.height / 2) - (height / 2)
   window.open(
@@ -135,6 +135,7 @@ var setupSocialShare = function () {
         var height = share.dataset.height || 300;
         if (share.href.includes('https://www.reddit.com/submit/?url=')) {
           share.href += '&title=' + document.title;
+          socialPopup(share.href, 850, height);
         }
         socialPopup(share.href, width, height);
       });
