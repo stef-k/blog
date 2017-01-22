@@ -1,5 +1,7 @@
 # Change example.com to your domain
 # Redirect HTTP to HTTPS
+# To setup free SSL fro Lets encrypt see:
+# https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-ubuntu-16-04
 server {
     listen 80;
     #listen [::]:80;
