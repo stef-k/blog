@@ -66,7 +66,7 @@
                                         have earned while working full time in unrelated sector.
                                     </p>
                                     <p>
-                                        You can contact me using the <a href="#">contact page</a> or you can also find
+                                        You can contact me using the <a href="{{route('contact')}}">contact page</a> or you can also find
                                         me at
                                         <a href="https://imaginebinary.io" target="_blank"
                                            title="check where I currently work">Imagine
