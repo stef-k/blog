@@ -136,8 +136,9 @@ var setupSocialShare = function () {
         if (share.href.includes('https://www.reddit.com/submit/?url=')) {
           share.href += '&title=' + document.title;
           socialPopup(share.href, 850, height);
+        } else {
+          socialPopup(share.href, width, height);
         }
-        socialPopup(share.href, width, height);
       });
     });
   }
