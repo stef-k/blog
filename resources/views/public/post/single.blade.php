@@ -22,14 +22,14 @@
     <div class="fade-in">
         <div class="container">
             <div class="columns">
-                <div class="column is-full-mobile is-8 is-offset-2">
+                <div class="column is-full-mobile is-8 is-offset-2-desktop">
                     <a href="{{ route('posts') }}" title="back to posts index">back to posts</a>
                 </div>
             </div>
 
             <div class="columns">
                 @include('layout.social')
-                <div class="column is-11-mobile is-offset-1-mobile is-10 is-offset-1">
+                <div class="column is-11-mobile is-offset-1-mobile is-8 is-offset-2">
                     <article class="entry" itemscope itemType="http://schema.org/BlogPosting">
                         <h1 class="title is-1 has-text-centered post-title" itemprop="headline">{{ $post->title }}</h1>
                         <div class="font-normal light-notice m-t-s">
@@ -76,7 +76,7 @@
             </div>
 
             <div class="columns">
-                <div class="column is-full-mobile is-10 is-offset-1">
+                <div class="column is-full-mobile is-8-desktop is-offset-2-desktop">
                     <a href="{{ route('posts') }}" title="back to posts index">back to posts</a>
                 </div>
             </div>

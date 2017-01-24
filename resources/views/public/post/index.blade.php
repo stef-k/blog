@@ -57,24 +57,8 @@
                 </div>
 
                 <div class="column is-2-desktop is-centered">
-                    @if(count($posts) > 0)
-                        <form method="post" class="m-t-s" action="{{route('search')}}">
-                            {{csrf_field()}}
-                            <p class="control">
-                                <input class="input" type="text" placeholder="Search in posts" name="term">
-                            </p>
-                            <button type="submit" class="button is-primary is-outlined">Search</button>
-                        </form>
-                    @endif
-                    @if(count($tags) > 0)
-                        <h2 class="title is-3 has-text-centered m-t-s">Popular Tags</h2>
-                        @foreach($tags as $tag)
-                            <a href="{{route('tag', [ 'name' => $tag->name ])}}" class="tag-link">
-                                <span class="tag is-primary m-t">{{$tag->name}}</span>
-                            </a>
-                        @endforeach
-                        <p class="m-t-s has-text-centered"><a href="{{route('tags')}}">all tags</a></p>
-                    @endif
+                    @include('public.common.search')
+                    @include('public.tag.popular')
                 </div>
 
             </div>

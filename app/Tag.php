@@ -32,6 +32,38 @@ class Tag extends Model
      */
     public function posts()
     {
-        return $this->belongsToMany(Post::class );
+        return $this->belongsToMany(Post::class);
     }
+
+    /**
+     * Get all posts or projects for a specific tag
+     *
+     * @param $query
+     * @param $name String name of the tag
+     *
+     * @return mixed
+     */
+    public function scopePostsByTag($query, $name)
+    {
+        $tag = $query->with('posts')->whereName($name)->get();
+
+        return $posts;
+    }
+
+    /**
+     * Get 10 most popular tags
+     *
+     * @return mixed
+     */
+    public function scopePopular()
+    {
+        $tags = Tag::join('post_tag', 'post_tag.tag_id', '=', 'tags.id')
+                   ->groupBy('tags.id')
+                   ->get(['tags.id', 'tags.name', \DB::raw('count(tags.id) as tag_count')])
+                   ->sortBy('name')
+                   ->take(10);
+
+        return $tags;
+    }
+
 }

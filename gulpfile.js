@@ -18,9 +18,10 @@ elixir((mix) => {
     .webpack(['public.js', 'app.js'], '', '', {watchOptions: {poll: true, aggregateTimeout: 500}});
   mix.scripts(['public.js', 'google-analytics.js'], 'public/js/public.js');
   mix.version(['css/app.css', 'js/app.js', 'js/public.js']);
-  mix.browserSync({
-    proxy: 'blog.app'
-  });
+
+  // mix.browserSync({
+  //   proxy: 'blog.dev'
+  // });
 });
 
 // elixir((mix) => {

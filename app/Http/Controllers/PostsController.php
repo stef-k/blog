@@ -21,13 +21,7 @@ class PostsController extends Controller
             $q->where('name', '=', 'is-project');
         })->where('published_at', '!=', 'null')->orderBy('created_at', 'desc')->paginate(3);
 
-        // get the 10 most used tags except 'is-project' tag
-        $tags = Tag::join('post_tag', 'post_tag.tag_id', '=', 'tags.id')
-                   ->groupBy('tags.id')
-                   ->having('tags.name', '!=', 'is-project')
-                   ->get(['tags.id', 'tags.name', \DB::raw('count(tags.id) as tag_count')])
-                   ->sortByDesc('tag_count')
-                   ->take(10);
+        $tags = Tag::popular();
 
         return view('public.post.index', compact('posts', 'tags'));
     }
@@ -51,37 +45,13 @@ class PostsController extends Controller
         return view('public.post.single', compact('post'));
     }
 
-
-    public function tag($name)
-    {
-        $posts = Post::with('tags')->whereHas('tags', function ($q) use ($name) {
-            $q->where('name', $name);
-        })->whereDoesntHave('tags', function ($q) {
-            $q->where('name', '=', 'is-project');
-        })->where('published_at', '!=', 'null')->orderBy('created_at', 'desc')->paginate(3);
-
-        // get the 10 most used tags except 'is-project' tag
-        $tags = Tag::join('post_tag', 'post_tag.tag_id', '=', 'tags.id')
-                   ->groupBy('tags.id')
-                   ->having('tags.name', '!=', 'is-project')
-                   ->get(['tags.id', 'tags.name', \DB::raw('count(tags.id) as tag_count')])
-                   ->sortByDesc('tag_count')
-                   ->take(10);
-
-        return view('public.post.index', compact('posts', 'tags'));
-    }
-
-    public function tags()
-    {
-        $tags = Tag::join('post_tag', 'post_tag.tag_id', '=', 'tags.id')
-                   ->groupBy('tags.id')
-                   ->having('tags.name', '!=', 'is-project')
-                   ->get(['tags.id', 'tags.name', \DB::raw('count(tags.id) as tag_count')])
-                   ->sortByDesc('tag_count');
-
-        return view('public.tag.index', compact('tags'));
-    }
-
+    /**
+     * Search in article titles and main body of text
+     *
+     * @param Request $request
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function search(Request $request)
     {
         $term = $request->input('term');
@@ -95,13 +65,7 @@ class PostsController extends Controller
 
         $posts->setPath('search');
 
-        // get the 10 most used tags except 'is-project' tag
-        $tags = Tag::join('post_tag', 'post_tag.tag_id', '=', 'tags.id')
-                   ->groupBy('tags.id')
-                   ->having('tags.name', '!=', 'is-project')
-                   ->get(['tags.id', 'tags.name', \DB::raw('count(tags.id) as tag_count')])
-                   ->sortByDesc('tag_count')
-                   ->take(10);
+        $tags = Tag::popular();
 
         return view('public.post.index', compact('posts', 'tags'));
     }

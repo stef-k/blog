@@ -1,1 +1,205 @@
-var setupIsActiveMenuClass=function(){var e=window.location.pathname,t=document.querySelectorAll(".nav-right > .nav-item");t.forEach(function(t){e===t.getAttribute("href")&&(t.className+=" is-active")})},setupMenuToggle=function(){document.querySelector(".nav-toggle").addEventListener("click",function(){var e=document.querySelector(".nav-toggle"),t=document.querySelector(".nav-menu");e.classList.toggle("is-active"),t.classList.toggle("is-active")})},setupHighlight=function(){var e=document.querySelectorAll("pre code");e.forEach(function(e){hljs.highlightBlock(e)})},setupNotifications=function(){document.querySelectorAll(".notification").forEach(function(e){e.addEventListener("click",function(e){e.target.parentNode.parentNode.removeChild(e.target.parentNode)})})},socialPopup=function(e,t,n){var o=screen.width/2-t/2,c=screen.height/2-n/2;window.open(e,"","menubar=no,toolbar=no,resizable=yes,scrollbars=yes,width="+t+",height="+n+",top="+c+",left="+o)},setupSocialShare=function(){var e=document.querySelectorAll(".social-share");e.length>0&&e.forEach(function(e){e.addEventListener("click",function(t){t.preventDefault();var n=e.dataset.width||500,o=e.dataset.height||300;e.href.includes("https://www.reddit.com/submit/?url=")&&(e.href+="&title="+document.title,socialPopup(e.href,850,o)),socialPopup(e.href,n,o)})})},callback=function(){setupIsActiveMenuClass(),setupMenuToggle(),setupNotifications(),setupHighlight(),setupSocialShare()};!function(){"complete"===document.readyState||"loading"!==document.readyState&&!document.documentElement.doScroll?callback():document.addEventListener("DOMContentLoaded",callback)}(),function(){void 0!==window.myapp.trackingId&&""!==window.myapp.trackingId&&(!function(e,t,n,o,c,a,i){e.GoogleAnalyticsObject=c,e[c]=e[c]||function(){(e[c].q=e[c].q||[]).push(arguments)},e[c].l=1*new Date,a=t.createElement(n),i=t.getElementsByTagName(n)[0],a.async=1,a.src=o,i.parentNode.insertBefore(a,i)}(window,document,"script","https://www.google-analytics.com/analytics.js","ga"),ga("create",window.myapp.trackingId,"auto"),ga("send","pageview"))}();
+// Bellow are two versions of all functions, the commented out is ES6
+// because I am missing something, webpack does not transpile to ES6
+// this file for some reason resulting breakage to gulp-uglify...
+// Either way the comments are stripped in production files.
+
+/**
+ * Sets the 'is-active' class to the correct menu element.
+ */
+// let setupIsActiveMenuClass = () => {
+//   (() => {
+//     let location = window.location.pathname;
+//     let anchors = document.querySelectorAll('.nav-right > .nav-item');
+//     anchors.forEach((el) => {
+//       if (location === el.getAttribute('href')) {
+//         el.className += ' is-active';
+//       }
+//     });
+//
+//   })();
+// };
+
+var setupIsActiveMenuClass = function () {
+  var location = window.location.pathname;
+  var anchors = document.querySelectorAll('.nav-right > .nav-item');
+
+  anchors.forEach(function(el) {
+    if (location === el.getAttribute('href')) {
+      el.className += ' is-active';
+    }
+  });
+
+};
+
+/**
+ * Sets the mobile menu on/off toggle
+ */
+// let setupMenuToggle = () => {
+//   document.querySelector('.nav-toggle').addEventListener('click', () => {
+//     let burger = document.querySelector('.nav-toggle');
+//     let menu = document.querySelector('.nav-menu');
+//     burger.classList.toggle('is-active');
+//     menu.classList.toggle('is-active');
+//   });
+// };
+
+var setupMenuToggle = function () {
+  document.querySelector('.nav-toggle').addEventListener('click', function() {
+    var burger = document.querySelector('.nav-toggle');
+    var menu = document.querySelector('.nav-menu');
+    burger.classList.toggle('is-active');
+    menu.classList.toggle('is-active');
+  });
+};
+
+// let setupHighlight = () => {
+//   let blocks = document.querySelectorAll('pre code');
+//   blocks.forEach((block) => {
+//     hljs.highlightBlock(block);
+//   })
+// };
+
+var setupHighlight = function () {
+  var blocks = document.querySelectorAll('pre code');
+  blocks.forEach(function(block) {
+    hljs.highlightBlock(block);
+  });
+};
+
+/**
+ * Closes notifications
+ */
+// let setupNotifications = () => {
+//   document.querySelectorAll('.notification').forEach((el) => {
+//     el.addEventListener('click', (e) => {
+//       e.target.parentNode.parentNode.removeChild(e.target.parentNode)
+//     });
+//   });
+// };
+
+var setupNotifications = function () {
+  document.querySelectorAll('.notification').forEach(function(el) {
+    el.addEventListener('click', function(e) {
+      e.target.parentNode.parentNode.removeChild(e.target.parentNode)
+    });
+  });
+};
+
+/**
+ * Pop up social shares
+ */
+// let socialPopup = (url, width, height) => {
+//   let left = (screen.width / 2) - (width / 2);
+//   let top = (screen.height / 2) - (height / 2)
+//   window.open(
+//     url,
+//     "",
+//     "menubar=no,toolbar=no,resizable=yes,scrollbars=yes,width=" + width + ",height=" + height + ",top=" + top + ",left=" + left
+//   );
+// };
+
+var socialPopup = function (url, width, height) {
+  var left = (screen.width / 2) - (width / 2);
+  var top = (screen.height / 2) - (height / 2)
+  window.open(
+    url,
+    "",
+    "menubar=no,toolbar=no,resizable=yes,scrollbars=yes,width=" + width + ",height=" + height + ",top=" + top + ",left=" + left
+  );
+};
+
+// let setupSocialShare = () => {
+//   let shares = document.querySelectorAll('.social-share');
+//   if (shares.length > 0) {
+//     shares.forEach((share) => {
+//       share.addEventListener('click', (e) => {
+//         e.preventDefault();
+//         let width = share.dataset.width || 500;
+//         let height = share.dataset.height || 300;
+//         if (share.href.includes('https://www.reddit.com/submit/?url=')) {
+//           share.href += '&title=' + document.title;
+//         }
+//         socialPopup(share.href, width, height);
+//       });
+//     });
+//   }
+// };
+
+var setupSocialShare = function () {
+  var shares = document.querySelectorAll('.social-share');
+  if (shares.length > 0) {
+    shares.forEach(function(share) {
+      share.addEventListener('click', function(e) {
+        e.preventDefault();
+        var width = share.dataset.width || 500;
+        var height = share.dataset.height || 300;
+        if (share.href.includes('https://www.reddit.com/submit/?url=')) {
+          share.href += '&title=' + document.title;
+          socialPopup(share.href, 850, height);
+        }
+        socialPopup(share.href, width, height);
+      });
+    });
+  }
+};
+
+/**
+ * Runs when document is ready
+ */
+// let callback = () => {
+//
+//   setupIsActiveMenuClass();
+//   setupMenuToggle();
+//   setupNotifications();
+//   setupHighlight();
+//   setupSocialShare();
+// };
+
+var callback = function () {
+  setupIsActiveMenuClass();
+  setupMenuToggle();
+  setupNotifications();
+  setupHighlight();
+  setupSocialShare();
+};
+
+/**
+ * Our document ready function.
+ * This site uses plain JavaScript on public pages
+ * and Vue.js on admin pages so no jQuery...
+ */
+(function() {
+  if (document.readyState === "complete" ||
+    (document.readyState !== "loading" && !document.documentElement.doScroll)) {
+    callback();
+  } else {
+    document.addEventListener("DOMContentLoaded", callback);
+  }
+})();
+
+/**
+ * Checks if a tracking ID exists in window.myapp namespace
+ * and invokes Google analytics.
+ */
+(function (){
+
+  if (window.myapp.trackingId !== undefined && window.myapp.trackingId !== '') {
+    (function (i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function () {
+          (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+      a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0];
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', window.myapp.trackingId, 'auto');
+    ga('send', 'pageview');
+  }
+
+})();
+
+//# sourceMappingURL=public.js.map

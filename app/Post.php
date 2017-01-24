@@ -116,4 +116,22 @@ class Post extends Model
 
         return implode("", $img[0]);
     }
+
+    /**
+     * Get all posts or projects for a specific tag
+     *
+     * @param $query
+     * @param $name String name of the tag
+     *
+     * @return mixed
+     */
+    public function scopePostsByTag($query, $name)
+    {
+        $posts = $query->with('tags')->whereHas('tags', function($q) use ($name){
+            $q->whereName($name);
+        } )->paginate(3);
+
+        return $posts;
+    }
+
 }

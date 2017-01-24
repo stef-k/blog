@@ -21,6 +21,8 @@ class ProjectsController extends Controller
             $q->where('name', '=', 'is-project');
         })->where('published_at', '!=', 'null')->orderBy('created_at', 'desc')->paginate(6);
 
+        $tags = Tag::popular();
+
         return view('public.project.index', compact('posts', 'tags'));
     }
 

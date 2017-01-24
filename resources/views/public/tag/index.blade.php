@@ -15,13 +15,13 @@
                         @foreach($tags as $tag)
                             <a href="{{route('tag', [ 'name' => $tag->name ])}}"
                                @if($tag->tag_count > 1)
-                               title="{{$tag->tag_count}} related posts"
+                               title="{{$tag->tag_count}} entries"
                                @else
-                               title="{{$tag->tag_count}} related post"
+                               title="{{$tag->tag_count}} entry"
                                     @endif
                             >
                             <span class="tag is-medium is-primary m-t">@php echo mb_strtoupper($tag->name) @endphp
-                                : {{$tag->tag_count}}
+                                <span class="tag-count"> {{$tag->tag_count}}</span>
                             </span>
                             </a>
                         @endforeach

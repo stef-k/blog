@@ -24,8 +24,6 @@ Route::post('/contact', 'ContactController@send');
 
 Route::get('/posts', 'PostsController@index')->name('posts');
 Route::get('/posts/{year}/{month}/{day}/{slug}', 'PostsController@show')->name('post');
-Route::get('/posts/tags/{name}', 'PostsController@tag')->name('tag');
-Route::get('posts/tags/', 'PostsController@tags')->name('tags');
 Route::get('posts/search', 'PostsController@search')->name('search');
 Route::post('posts/search', 'PostsController@search')->name('search');
 
@@ -34,6 +32,8 @@ Route::get('/projects', 'ProjectsController@index')->name('projects');
 Route::get('/projects/{year}/{month}/{day}/{slug}', 'ProjectsController@show')->name('project');
 Route::get('/public/images/{image}', 'Admin\FilesController@image');
 
+Route::get('/tags', 'TagsController@index')->name('tags');
+Route::get('/tags/{name}', 'TagsController@tag')->name('tag');
 
 // Admin routes
 Route::get('/admin{anyroute}', function () {
