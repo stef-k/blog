@@ -1,4 +1,14 @@
+@section('meta')
+    <meta name="description" content="{{$post->excerpt(100, false)}}">
+    <meta name="keywords" content="
+    @foreach($post->tags as $tag)
+        {{$tag->name}}
+    @endforeach
+            ">
+    <meta name="author" content="{{$author}}">
+@stop
 @section('og')
+    {{--facebook open graph--}}
     <meta property="og:title" content="{{$post->title}}">
     <meta property="og:type" content="article">
     <meta property="og:locale" content="en_US">
@@ -13,6 +23,15 @@
     <meta property="og:image:type" content="image/png">
     <meta property="article:published_time" content="{{$post->published_at}}">
     <meta property="og:description" content="{{$post->excerpt(200, false)}}">
+    {{--twitter open graph--}}
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:title" content="{{$post->title}}"/>
+    <meta name="twitter:description" content="{{$post->excerpt(100, false)}}"/>
+    @if($post->image(true) != '')
+        <meta property="twitter:image" content="{{ url('/') . $post->image(true) }}">
+    @else
+        <meta property="twitter:image" content="{{ url('/') . 'icon.png' }}">
+    @endif
 @stop
 
 @section('title', $post->title )
@@ -54,7 +73,8 @@
                         @if($post->image(true) != '')
                             <link itemprop="image" href="{{$post->image(true)}}" hidden class="noseen"/>
                         @else
-                            <link itemprop="image" href="{{env('APP_URL') . elixir('img/icon.png')}}" hidden class="noseen"/>
+                            <link itemprop="image" href="{{env('APP_URL') . elixir('img/icon.png')}}" hidden
+                                  class="noseen"/>
                         @endif
 
                         <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization" hidden>
@@ -84,7 +104,7 @@
         </div>
     </div>
     <script>
-      (function(){
+      (function () {
         if (window.myapp.disqusUrl !== '') {
           var disqus_config = function () {
             this.page.url = '{!! env('APP_URL') !!}{{$post->permalink()}}';  // Replace PAGE_URL with your page's canonical URL variable
