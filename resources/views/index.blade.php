@@ -86,7 +86,7 @@
                                     </p>
                                     <p>
                                         If you are interested or you want to use it, you can find the code at
-                                        <a href="#" target="_blank">Github</a>
+                                        <a href="https://github.com/stef-k/blog" target="_blank">Github</a>
                                     </p>
 
                                     <p class="has-text-centered text-dark">
