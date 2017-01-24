@@ -39,7 +39,7 @@
 @extends('layout.master')
 
 @section('content')
-    <div class="m-l">
+    <div class="m-l"></div>
     @include('public.common.magnify')
     <article class="fade-in">
         <div class="container">
