@@ -20,6 +20,7 @@
 
 @section('content')
     <div class="m-l"></div>
+    @include('public.common.magnify')
     <article class="fade-in">
         <div class="container">
             <div class="columns">
@@ -53,15 +54,15 @@
                             <span itemprop="author" hidden>by {{$author}}</span>
                         </div>
                         @if($post->image(true) != '')
-                            <link itemprop="image" href="{{$post->image(true)}}" hidden/>
+                            <link itemprop="image" href="{{$post->image(true)}}" hidden class="noseen"/>
                         @else
-                            <link itemprop="image" href="{{env('APP_URL') . elixir('img/icon.png')}}" hidden/>
+                            <link itemprop="image" href="{{env('APP_URL') . elixir('img/icon.png')}}" hidden class="noseen"/>
                         @endif
 
                         <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization" hidden>
                             <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
-                                <img src="{{elixir('img/icon.png')}}" alt="publisher icon">
-                                <meta itemprop="url" content="{{env('APP_URL') . elixir('img/icon.png')}}">
+                                <img src="{{elixir('img/icon.png')}}" alt="publisher icon" class="noseen">
+                                <meta itemprop="url" content="{{env('APP_URL') . elixir('img/icon.png')}}" >
                                 <meta itemprop="width" content="128">
                                 <meta itemprop="height" content="128">
                             </div>

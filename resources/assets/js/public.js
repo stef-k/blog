@@ -125,6 +125,9 @@ var socialPopup = function (url, width, height) {
 //   }
 // };
 
+/**
+ *
+ */
 var setupSocialShare = function () {
   var shares = document.querySelectorAll('.social-share');
   if (shares.length > 0) {
@@ -144,6 +147,48 @@ var setupSocialShare = function () {
   }
 };
 
+var setupEnlargeImage = function() {
+  var magnify = document.querySelector('.magnify');
+
+  if (magnify === null) {
+    return;
+  }
+
+  var images = document.querySelector('.entry');
+  var container = document.querySelector('.container');
+
+  if (images !== null) {
+    images = images.querySelectorAll('img:not(.noseen)');
+
+    images.forEach(function(img) {
+      var clone = img.cloneNode();
+
+      var span = document.createElement('span');
+      var txt = document.createTextNode('click on image to zoom');
+      span.classList.add('light-notice', 'font-normal');
+      span.appendChild(txt);
+
+      img.parentNode.appendChild(span);
+      // listen for click and zoom
+      img.addEventListener('click', function(e){
+        container.classList.add('is-hidden');
+        magnify.appendChild(clone);
+        magnify.classList.toggle('is-hidden');
+      });
+
+      // listen for click to zoom out back to normal
+      magnify.addEventListener('click', function (e) {
+        if (magnify.contains(clone)) {
+          container.classList.remove('is-hidden');
+          magnify.classList.toggle('is-hidden');
+          magnify.removeChild(clone);
+        }
+      })
+    });
+  }
+};
+
+
 /**
  * Runs when document is ready
  */
@@ -162,6 +207,7 @@ var callback = function () {
   setupNotifications();
   setupHighlight();
   setupSocialShare();
+  setupEnlargeImage();
 };
 
 /**

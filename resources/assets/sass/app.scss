@@ -276,10 +276,6 @@ main {
   animation-duration: 0.6s;
 }
 
-.fullheight {
-  min-height: calc(100vh - 60px);
-}
-
 // Editor styles
 #edit {
   resize: none;
@@ -688,11 +684,17 @@ main {
 
 .pagination-previous,
 .pagination-next,
-.pagination-link{
+.pagination-link {
   min-width: 40px;
   max-width: 40px;
 }
 
 .tag-count {
   margin-left: .4rem;
+}
+
+.magnify {
+  z-index: 9999;
+  max-width: 90%;
+  max-height: 90%;
 }
