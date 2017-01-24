@@ -15,7 +15,7 @@
     <meta property="og:locale" content="en_US">
     <meta property="og:url" content="{{ url('/') . $post->permalink()}}">
     @if($post->image(true) != '')
-        <meta property="og:image" content="{{ url('/') . $post->image(true) }}">
+        <meta property="og:image" content="{{ $post->image(true) }}">
     @else
         <meta property="og:image" content="{{ url('/') . 'icon.png' }}">
     @endif
@@ -29,7 +29,7 @@
     <meta name="twitter:title" content="{{$post->title}}"/>
     <meta name="twitter:description" content="{{$post->excerpt(100, false)}}"/>
     @if($post->image(true) != '')
-        <meta property="twitter:image" content="{{ url('/') . $post->image(true) }}">
+        <meta property="og:image" content="{{ $post->image(true) }}">
     @else
         <meta property="twitter:image" content="{{ url('/') . 'icon.png' }}">
     @endif

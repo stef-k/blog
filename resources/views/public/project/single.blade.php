@@ -15,9 +15,9 @@
     <meta property="og:locale" content="en_US">
     <meta property="og:url" content="{{ url('/') . $post->permalink()}}">
     @if($post->image(true) != '')
-        <meta property="og:image" content="{{ url('/') . $post->image(true) }}">
+        <meta property="og:image" content="{{ $post->image(true) }}">
     @else
-        <meta property="og:image" content="{{ url('/') . 'icon.png' }}">
+        <meta property="og:image" content="{{ url('/') . '/icon.png' }}">
     @endif
     <meta property="og:image:width" content="128">
     <meta property="og:image:height" content="128">
@@ -29,7 +29,7 @@
     <meta name="twitter:title" content="{{$post->title}}"/>
     <meta name="twitter:description" content="{{$post->excerpt(100, false)}}"/>
     @if($post->image(true) != '')
-        <meta property="twitter:image" content="{{ url('/') . $post->image(true) }}">
+        <meta property="twitter:image" content="{{ $post->image(true) }}">
     @else
         <meta property="twitter:image" content="{{ url('/') . 'icon.png' }}">
     @endif
@@ -39,7 +39,7 @@
 @extends('layout.master')
 
 @section('content')
-    <div class="m-l"></div>
+    <div class="m-l"></div>test {{$post->image(true)}}
     @include('public.common.magnify')
     <article class="fade-in">
         <div class="container">

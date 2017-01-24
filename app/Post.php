@@ -85,16 +85,15 @@ class Post extends Model
     {
         preg_match("/^!\[.*\]\(.*\)$/m", $this->body, $img);
 
+        // extract image's URL
         if($url) {
             if (sizeof($img) > 0) {
                 $str = $img[0];
-                preg_match("/\/[\w]+[^\s]+ /", $str, $str);
-                $img = $str;
+                preg_match("#\bhttps?://[^\s()<>]+(?:\([\w\d]+\)|([^[:punct:]\s]|/))#", $str, $clean);
+                $img = $clean;
             } else {
                 $img[0] = '';
             }
-
-
         }
 
         if (count($img) > 0) {
