@@ -39,7 +39,7 @@
 @extends('layout.master')
 
 @section('content')
-    <div class="m-l"></div>test {{$post->image(true)}}
+    <div class="m-l">
     @include('public.common.magnify')
     <article class="fade-in">
         <div class="container">
