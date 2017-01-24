@@ -8,6 +8,7 @@
     <meta name="author" content="{{$author}}">
 @stop
 @section('og')
+    <meta property="og:site_name" content="@php echo env('SITE_NAME') @endphp">
     {{--facebook open graph--}}
     <meta property="og:title" content="{{$post->title}}">
     <meta property="og:type" content="article">
