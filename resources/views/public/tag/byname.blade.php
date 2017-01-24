@@ -1,12 +1,12 @@
 @extends('layout.master')
-@section('title', 'Posts')
+@section('title', 'Posts for tag '  . $term)
 @section('content')
     <div class="m-l"></div>
     <main class="fade-in">
         <div class="container">
             <div class="columns">
                 <div class="column is-full-mobile is-8-desktop is-offset-1-desktop">
-                    <h1 class="title is-2 has-text-centered">Posts</h1>
+                    <h1 class="title is-2 has-text-centered">Entries related to tag <span class="primary">{{$term}}</span></h1>
                 </div>
             </div>
 

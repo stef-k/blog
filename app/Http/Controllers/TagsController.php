@@ -25,10 +25,11 @@ class TagsController extends Controller
 
     public function tag($request)
     {
+        $term = $request;
         $posts = Post::postsByTag($request);
 
         $tags  = Tag::popular();
 
-        return view('public.tag.byname', compact('posts', 'tags'));
+        return view('public.tag.byname', compact('posts', 'tags', 'term'));
     }
 }
