@@ -665,6 +665,8 @@ main {
     box-shadow: 0 0 3px $primary;
   }
   .item {
+    min-height: 250px;
+    max-height: 250px;
     &:after {
       content: "";
       display: block;
@@ -698,3 +700,4 @@ main {
   max-width: 90%;
   max-height: 90%;
 }
+

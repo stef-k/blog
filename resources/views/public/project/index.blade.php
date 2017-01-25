@@ -36,9 +36,6 @@
                                                 {{--tags--}}
                                                 <div class="card-content">
                                                     <div class="content">
-                                                        @if($post->image(true) == '')
-                                                            {!! Markdown::parse($post->excerpt(150, false), ['purifier' => false]) !!}
-                                                        @endif
                                                         @foreach($post->tags as $tag)
                                                             @if($loop->count == 1 && $tag->name == 'is-project')
                                                                 {{--keep same height by cheating with whitespace and preformatted text--}}
