@@ -7,7 +7,13 @@
                   title="{{$tag->tag_count}} entries"
                   @else
                   title="{{$tag->tag_count}} entry"
-                    @endif>{{$tag->name}} {{$tag->tag_count}}
+                    @endif>
+                @if($tag->name === 'is-project')
+                    project
+                @else
+                    {{$tag->name}}
+                @endif
+                {{$tag->tag_count}}
 
             </span>
         </a>

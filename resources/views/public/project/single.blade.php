@@ -2,7 +2,7 @@
     <meta name="description" content="{{$post->excerpt(100, false)}}">
     <meta name="keywords" content="
     @foreach($post->tags as $tag)
-        {{$tag->name}}
+    {{$tag->name}}
     @endforeach
             ">
     <meta name="author" content="{{$author}}">
@@ -54,18 +54,23 @@
                 <div class="column is-11-mobile is-offset-1-mobile is-8-desktop is-offset-2-desktop">
                     <article class="entry" itemscope itemType="http://schema.org/BlogPosting">
                         <h1 class="title is-1 has-text-centered post-title" itemprop="headline">{{ $post->title }}</h1>
+                        <div class="column">
+                            @foreach($post->tags as $tag)
+                                <span class="tag is-primary m-t">
+                                    @if($tag->name === 'is-project')
+                                        project
+                                    @else
+                                        {{$tag->name}}
+                                    @endif
+                                    </span>
+                            @endforeach
+                        </div>
                         <div class="font-normal light-notice m-t-s">
                             <span itemprop="datePublished">published at: {{date('M, d Y', strtotime($post->published_at))}}</span>
                             <span class="is-pulled-right"
                                   itemprop="dateModified">updated at: {{ date('M, d Y', strtotime($post->updated_at))  }}</span>
-                            <div class="m-t-s">
-                                @foreach($post->tags as $tag)
-                                    @if(!$tag->name == 'is-project' || !$tag->name == 'isproject')
-                                        <span class="tag is-primary m-t">{{$tag->name}}</span>
-                                    @endif
-                                @endforeach
-                            </div>
                         </div>
+
                         <div class="post" itemprop="articleBody">
                             {!! Markdown::parse($post->body, ['purifier' => false]) !!}
                         </div>
