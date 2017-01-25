@@ -3,7 +3,7 @@
 @section('content')
     <div class="m-t-l m-b-m"></div>
     <main class="fade-in">
-        <div class="container">
+        <div class="container-fluid">
             <h1 class="title is-2 has-text-centered">Some of my projects</h1>
 
             <div class="columns">
@@ -13,7 +13,7 @@
 
                         @if(count($posts) > 0)
                             @foreach($posts as $post)
-                                <div class="column is-full-mobile is-half-tablet is-4-desktop">
+                                <div class="column is-full-mobile is-4-desktop">
                                     <div class="project">
                                         <a href="{{ $post->permalink('projects/') }}" title="click to view project details">
                                             <div class="card">
