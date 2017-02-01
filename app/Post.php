@@ -66,7 +66,6 @@ class Post extends Model
         $excerpt = substr($this->body, 0, $limit);
         if (!$withImage) {
             $excerpt = preg_replace("/^!\[.*\]\(.*\)$/m", '', $excerpt);
-            \Log::info($excerpt);
         }
 
         $cutoff = strrpos($excerpt, ' ');
