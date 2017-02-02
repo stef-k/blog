@@ -23,7 +23,7 @@ var setupIsActiveMenuClass = function () {
   var location = window.location.pathname;
   var anchors = document.querySelectorAll('.nav-right > .nav-item');
 
-  anchors.forEach(function(el) {
+  anchors.forEach(function (el) {
     if (location === el.getAttribute('href')) {
       el.className += ' is-active';
     }
@@ -44,7 +44,7 @@ var setupIsActiveMenuClass = function () {
 // };
 
 var setupMenuToggle = function () {
-  document.querySelector('.nav-toggle').addEventListener('click', function() {
+  document.querySelector('.nav-toggle').addEventListener('click', function () {
     var burger = document.querySelector('.nav-toggle');
     var menu = document.querySelector('.nav-menu');
     burger.classList.toggle('is-active');
@@ -61,7 +61,7 @@ var setupMenuToggle = function () {
 
 var setupHighlight = function () {
   var blocks = document.querySelectorAll('pre code');
-  blocks.forEach(function(block) {
+  blocks.forEach(function (block) {
     hljs.highlightBlock(block);
   });
 };
@@ -78,8 +78,8 @@ var setupHighlight = function () {
 // };
 
 var setupNotifications = function () {
-  document.querySelectorAll('.notification').forEach(function(el) {
-    el.addEventListener('click', function(e) {
+  document.querySelectorAll('.notification').forEach(function (el) {
+    el.addEventListener('click', function (e) {
       e.target.parentNode.parentNode.removeChild(e.target.parentNode)
     });
   });
@@ -131,8 +131,8 @@ var socialPopup = function (url, width, height) {
 var setupSocialShare = function () {
   var shares = document.querySelectorAll('.social-share');
   if (shares.length > 0) {
-    shares.forEach(function(share) {
-      share.addEventListener('click', function(e) {
+    shares.forEach(function (share) {
+      share.addEventListener('click', function (e) {
         e.preventDefault();
         var width = share.dataset.width || 500;
         var height = share.dataset.height || 300;
@@ -147,7 +147,7 @@ var setupSocialShare = function () {
   }
 };
 
-var setupEnlargeImage = function() {
+var setupEnlargeImage = function () {
   var magnify = document.querySelector('.magnify');
 
   if (magnify === null) {
@@ -160,19 +160,25 @@ var setupEnlargeImage = function() {
   if (images !== null) {
     images = images.querySelectorAll('img:not(.noseen)');
 
-    images.forEach(function(img) {
+    images.forEach(function (img) {
       var clone = img.cloneNode();
 
       var span = document.createElement('span');
-      var txt = document.createTextNode('click on image to zoom');
+      var txt = document.createTextNode('click on image to zoom in');
       span.classList.add('light-notice', 'font-normal');
       span.appendChild(txt);
 
       img.parentNode.appendChild(span);
       // listen for click and zoom
-      img.addEventListener('click', function(e){
+      img.addEventListener('click', function (e) {
+        // reference to scroll position
+        window.myapp = window.myapp || {};
+        window.myapp.srollPos = document.documentElement.scrollTop || document.body.scrollTop;
+
+        // append childs and classes to zoom in
         container.classList.add('is-hidden');
         magnify.appendChild(clone);
+        magnify.appendChild(span);
         magnify.classList.toggle('is-hidden');
       });
 
@@ -181,6 +187,8 @@ var setupEnlargeImage = function() {
         if (magnify.contains(clone)) {
           container.classList.remove('is-hidden');
           magnify.classList.toggle('is-hidden');
+          document.documentElement.scrollTop = window.myapp.srollPos;
+          document.body.scrollTop = window.myapp.srollPos;
           magnify.removeChild(clone);
         }
       })
@@ -188,6 +196,25 @@ var setupEnlargeImage = function() {
   }
 };
 
+
+// listen for ESC key and zoom out zoomed image
+var zoomOutImage = function () {
+  document.onkeydown = function (e) {
+    if (e.keyCode === 27) {
+      var magnify = document.querySelector('.magnify');
+      var container = document.querySelector('.container');
+      if (!magnify.classList.contains('is-hidden')) {
+        container.classList.remove('is-hidden');
+        magnify.classList.toggle('is-hidden');
+        document.documentElement.scrollTop = window.myapp.srollPos;
+        document.body.scrollTop = window.myapp.srollPos;
+        while (magnify.firstChild) {
+          magnify.removeChild(magnify.firstChild);
+        }
+      }
+    }
+  }
+};
 
 /**
  * Runs when document is ready
@@ -208,6 +235,7 @@ var callback = function () {
   setupHighlight();
   setupSocialShare();
   setupEnlargeImage();
+  zoomOutImage();
 };
 
 /**
@@ -215,7 +243,7 @@ var callback = function () {
  * This site uses plain JavaScript on public pages
  * and Vue.js on admin pages so no jQuery...
  */
-(function() {
+(function () {
   if (document.readyState === "complete" ||
     (document.readyState !== "loading" && !document.documentElement.doScroll)) {
     callback();
