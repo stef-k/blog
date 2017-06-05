@@ -25,6 +25,7 @@ use App\Tag;
  * @method static \Illuminate\Database\Query\Builder|\App\Post whereBody($value)
  * @method static \Illuminate\Database\Query\Builder|\App\Post wherePublishedAt($value)
  * @mixin \Eloquent
+ * @method static \Illuminate\Database\Query\Builder|\App\Post postsByTag($name)
  */
 class Post extends Model
 {

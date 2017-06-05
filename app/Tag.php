@@ -19,6 +19,8 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Query\Builder|\App\Tag whereUpdatedAt($value)
  * @method static \Illuminate\Database\Query\Builder|\App\Tag whereName($value)
  * @mixin \Eloquent
+ * @method static \Illuminate\Database\Query\Builder|\App\Tag postsByTag($name)
+ * @method static \Illuminate\Database\Query\Builder|\App\Tag popular()
  */
 class Tag extends Model
 {

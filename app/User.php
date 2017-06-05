@@ -23,6 +23,8 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
  * @method static \Illuminate\Database\Query\Builder|\App\User whereCreatedAt($value)
  * @method static \Illuminate\Database\Query\Builder|\App\User whereUpdatedAt($value)
  * @mixin \Eloquent
+ * @property string $api_token
+ * @method static \Illuminate\Database\Query\Builder|\App\User whereApiToken($value)
  */
 class User extends Authenticatable
 {
