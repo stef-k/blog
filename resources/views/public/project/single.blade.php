@@ -53,7 +53,7 @@
                 @include('layout.social')
                 <div class="column is-11-mobile is-offset-1-mobile is-8-desktop is-offset-2-desktop">
                     <article class="entry" itemscope itemType="http://schema.org/BlogPosting">
-                        <h1 class="title is-1 has-text-centered post-title" itemprop="headline">{{ $post->title }}</h1>
+                        <h1 class="title is-2 has-text-centered post-title" itemprop="headline">{{ $post->title }}</h1>
                         <div class="column">
                             @foreach($post->tags as $tag)
                                 <span class="tag is-primary m-t">

@@ -52,7 +52,7 @@
                 @include('layout.social')
                 <div class="column is-11-mobile is-offset-1-mobile is-8 is-offset-2">
                     <article class="entry" itemscope itemType="http://schema.org/BlogPosting">
-                        <h1 class="title is-1 has-text-centered post-title" itemprop="headline">{{ $post->title }}</h1>
+                        <h1 class="title is-2 has-text-centered post-title" itemprop="headline">{{ $post->title }}</h1>
                         <div class="font-normal light-notice m-t-s">
                             <span itemprop="datePublished">published at: {{date('M, d Y', strtotime($post->published_at))}}</span>
                             <span class="is-pulled-right"
