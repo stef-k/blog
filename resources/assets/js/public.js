@@ -52,6 +52,13 @@ var setupMenuToggle = function () {
   });
 };
 
+var setupExternalLinks = function () {
+  for (var tag = document.getElementsByTagName('a'), i=0;tag < link.length;i++) {
+    var ref  = tag[i];
+    ref.getAttribute('href') && ref.hostname !== location.hostname && (ref.target = '_blank');
+  }
+};
+
 // let setupHighlight = () => {
 //   let blocks = document.querySelectorAll('pre code');
 //   blocks.forEach((block) => {
@@ -231,6 +238,7 @@ var zoomOutImage = function () {
 var callback = function () {
   setupIsActiveMenuClass();
   setupMenuToggle();
+  setupExternalLinks();
   setupNotifications();
   setupHighlight();
   setupSocialShare();
