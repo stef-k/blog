@@ -53,8 +53,8 @@ var setupMenuToggle = function () {
 };
 
 var setupExternalLinks = function () {
-  for (var tag = document.getElementsByTagName('a'), i=0;tag < tag.length;i++) {
-    var ref  = tag[i];
+  for (var tag = document.getElementsByTagName('a'), i = 0; i < tag.length; i++) {
+    var ref = tag[i];
     ref.getAttribute('href') && ref.hostname !== location.hostname && (ref.target = '_blank');
   }
 };
