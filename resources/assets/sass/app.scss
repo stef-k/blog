@@ -19,6 +19,12 @@ pre {
   background-color: transparent;
 }
 
+img {
+  &:hover {
+    cursor: pointer!important;
+  }
+}
+
 .columns {
   margin-left: 0;
   margin-right: 0;
