@@ -15,7 +15,10 @@ class TagsController extends Controller
      */
     public function index()
     {
-        $tags = Tag::popular();
+        $tags = Tag::join('post_tag', 'post_tag.tag_id', '=', 'tags.id')
+                   ->groupBy('tags.id')
+                   ->get(['tags.id', 'tags.name', \DB::raw('count(tags.id) as tag_count')])
+                   ->sortByDesc('tag_count');
 
         return view('public.tag.index', compact('tags'));
     }
