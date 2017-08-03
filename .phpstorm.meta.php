@@ -3,7 +3,7 @@ namespace PHPSTORM_META {
 
    /**
     * PhpStorm Meta file, to provide autocomplete information for PhpStorm
-    * Generated on 2017-06-05.
+    * Generated on 2017-08-03.
     *
     * @author Barry vd. Heuvel <barryvdh@gmail.com>
     * @see https://github.com/barryvdh/laravel-ide-helper
@@ -89,7 +89,7 @@ namespace PHPSTORM_META {
             'command.up' instanceof \Illuminate\Foundation\Console\UpCommand,
             'command.view.clear' instanceof \Illuminate\Foundation\Console\ViewClearCommand,
             'command.app.name' instanceof \Illuminate\Foundation\Console\AppNameCommand,
-            'command.auth.make' instanceof \Illuminate\Auth\Console\MakeAuthCommand,
+            'command.auth.make' instanceof \Illuminate\Auth\Console\AuthMakeCommand,
             'command.cache.table' instanceof \Illuminate\Cache\Console\CacheTableCommand,
             'command.console.make' instanceof \Illuminate\Foundation\Console\ConsoleMakeCommand,
             'command.controller.make' instanceof \Illuminate\Routing\Console\ControllerMakeCommand,
@@ -213,7 +213,7 @@ namespace PHPSTORM_META {
             'command.up' instanceof \Illuminate\Foundation\Console\UpCommand,
             'command.view.clear' instanceof \Illuminate\Foundation\Console\ViewClearCommand,
             'command.app.name' instanceof \Illuminate\Foundation\Console\AppNameCommand,
-            'command.auth.make' instanceof \Illuminate\Auth\Console\MakeAuthCommand,
+            'command.auth.make' instanceof \Illuminate\Auth\Console\AuthMakeCommand,
             'command.cache.table' instanceof \Illuminate\Cache\Console\CacheTableCommand,
             'command.console.make' instanceof \Illuminate\Foundation\Console\ConsoleMakeCommand,
             'command.controller.make' instanceof \Illuminate\Routing\Console\ControllerMakeCommand,
@@ -337,7 +337,7 @@ namespace PHPSTORM_META {
             'command.up' instanceof \Illuminate\Foundation\Console\UpCommand,
             'command.view.clear' instanceof \Illuminate\Foundation\Console\ViewClearCommand,
             'command.app.name' instanceof \Illuminate\Foundation\Console\AppNameCommand,
-            'command.auth.make' instanceof \Illuminate\Auth\Console\MakeAuthCommand,
+            'command.auth.make' instanceof \Illuminate\Auth\Console\AuthMakeCommand,
             'command.cache.table' instanceof \Illuminate\Cache\Console\CacheTableCommand,
             'command.console.make' instanceof \Illuminate\Foundation\Console\ConsoleMakeCommand,
             'command.controller.make' instanceof \Illuminate\Routing\Console\ControllerMakeCommand,
@@ -461,7 +461,7 @@ namespace PHPSTORM_META {
             'command.up' instanceof \Illuminate\Foundation\Console\UpCommand,
             'command.view.clear' instanceof \Illuminate\Foundation\Console\ViewClearCommand,
             'command.app.name' instanceof \Illuminate\Foundation\Console\AppNameCommand,
-            'command.auth.make' instanceof \Illuminate\Auth\Console\MakeAuthCommand,
+            'command.auth.make' instanceof \Illuminate\Auth\Console\AuthMakeCommand,
             'command.cache.table' instanceof \Illuminate\Cache\Console\CacheTableCommand,
             'command.console.make' instanceof \Illuminate\Foundation\Console\ConsoleMakeCommand,
             'command.controller.make' instanceof \Illuminate\Routing\Console\ControllerMakeCommand,
