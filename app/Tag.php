@@ -62,7 +62,7 @@ class Tag extends Model
         $tags = Tag::join('post_tag', 'post_tag.tag_id', '=', 'tags.id')
                    ->groupBy('tags.id')
                    ->get(['tags.id', 'tags.name', \DB::raw('count(tags.id) as tag_count')])
-                   ->sortBy('name')
+                   ->sortByDesc('tag_count')
                    ->take(10);
 
         return $tags;
