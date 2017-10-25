@@ -45,7 +45,7 @@ class Post extends Model
      *
      * @return string
      */
-    public function permalink($type='posts/')
+    public function permalink($type = 'posts/')
     {
         $date = strtotime($this->published_at);
         $year = date("Y", $date);
@@ -61,7 +61,7 @@ class Post extends Model
      * @param boolean $withImage keep image in exceprt?
      * @return string
      */
-    public function excerpt($limit=150, $withImage=true)
+    public function excerpt($limit = 150, $withImage = true)
     {
 
         $excerpt = substr($this->body, 0, $limit);
@@ -81,12 +81,12 @@ class Post extends Model
      *
      * @return string
      */
-    public function image($url=false)
+    public function image($url = false)
     {
         preg_match("/^!\[.*\]\(.*\)$/m", $this->body, $img);
 
         // extract image's URL
-        if($url) {
+        if ($url) {
             if (sizeof($img) > 0) {
                 $str = $img[0];
                 preg_match("#\bhttps?://[^\s()<>]+(?:\([\w\d]+\)|([^[:punct:]\s]|/))#", $str, $clean);
@@ -101,7 +101,6 @@ class Post extends Model
         } else {
             return '';
         }
-
     }
 
     /**
@@ -109,7 +108,7 @@ class Post extends Model
      *
      * @return string
      */
-    public function images($url=false)
+    public function images($url = false)
     {
         preg_match_all("/^!\[.*\]\(.*\)$/m", $this->body, $img);
 
@@ -126,11 +125,10 @@ class Post extends Model
      */
     public function scopePostsByTag($query, $name)
     {
-        $posts = $query->with('tags')->whereHas('tags', function($q) use ($name){
+        $posts = $query->with('tags')->whereHas('tags', function ($q) use ($name) {
             $q->whereName($name);
-        } )->paginate(3);
+        })->paginate(3);
 
         return $posts;
     }
-
 }
