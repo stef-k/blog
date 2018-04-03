@@ -21,8 +21,8 @@
                 <section class="hero is-fullheight is-default is-bold">
                     <div class="hero-body">
                         <div class="container has-text-centered">
-                            <h1 class="title is-1">icCode</h1>
-                            <h2 class="subtitle is-4">Welcome</h2>
+                            <h1 class="title is-1">Hello</h1>
+                            <h2 class="subtitle is-4">I'm Stef</h2>
                         </div>
                     </div>
                 </section>
@@ -47,14 +47,15 @@
                                         <span class="tag is-primary m-t">Python</span>
                                         <span class="tag is-primary m-t">Django</span>
                                         <span class="tag is-primary m-t">Ionic</span>
+                                        <span class="tag is-primary m-t">AdonisJS</span>
                                     </p>
                                 </div>
                             </div>
                             <div class="column">
 
                                 <div class="content is-medium is-justified">
-                                    <p> Hi, my name is <span class="anime anime-2">Stefanos</span> <span
-                                                class="anime anime-3">Kariotidis</span> and this is my personal space on
+                                    <p> Hi, my name is <strong><span class="anime anime-2">Stefanos</span> <span
+                                                class="anime anime-3">Kariotidis</span></strong> and this is my personal space on
                                         web. When
                                         not at
                                         work, I
