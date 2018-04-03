@@ -12,7 +12,7 @@
     <meta property="og:image:height" content="64">
     <meta property="og:image:type" content="image/png">
 @stop
-@section('title', env('SITE_NAME') . ' | ' . env('USERNAME'))
+@section('title', env('SITE_NAME') . ' | ' . 'Welcome')
 @extends('layout.master')
 @section('content')
     <main role="main" class="fade-in">
