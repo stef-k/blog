@@ -7,7 +7,7 @@ made with Laravel.
 
 ## Demo
 
-Check https://iccode.net
+Check https://stefk.me
 
 ## Features
 

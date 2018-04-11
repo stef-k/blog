@@ -33,12 +33,12 @@
                 <h2 class="title is-3"> Disqus Comments</h2>
                 <p>Set your Disqus site URL and comments will be automatically enabled for posts.</p>
                 <p class="control m-y-s">
-                    <input type="text" class="input" placeholder="Your site disqus URL, e.g: iccode"
+                    <input type="text" class="input" placeholder="Your site disqus URL, e.g: stefk.me"
                            v-model="disqusUrl">
                 </p>
                 <p class="light-notice font-normal m-b-s">
-                    Example: for <span class="primary">www.iccode.net</span>, the value must be <span class="primary">iccode</span>
-                    which on Disqus platform will be <span class="primary">iccode.disqus.com</span>
+                    Example: for <span class="primary">www.stefk.me</span>, the value must be <span class="primary">stefk</span>
+                    which on Disqus platform will be <span class="primary">stefk.disqus.com</span>
                 </p>
                 <a class="button is-primary" :class="{ 'is-disabled': disqusBtnDisabled, 'is-loading': loadingDisqus }"
                    @click="saveDisqus">Save</a>

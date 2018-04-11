@@ -1,7 +1,7 @@
 <nav class="nav has-shadow primary sticky-nav" itemscope itemtype="http://schema.org/SiteNavigationElement">
     <div class="nav-left">
         <a class="nav-item is-brand" href="/">
-            <img src="{{ elixir('img/icon.png')  }}" alt="icCode logo" title="Home page">
+            <img src="{{ elixir('img/icon.png')  }}" alt="stefk.me logo" title="Home page">
         </a>
     </div>
 
