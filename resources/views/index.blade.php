@@ -1,8 +1,8 @@
 @section('og')
     <meta name="description" content="Stef's personal space on web including info, blog and portfolio">
-    <meta name="keywords" content="personal site blog portfolio iccode">
-    <meta property="og:title" content="icCode - Stef K">
-    <meta property="og:site_name" content="icCode">
+    <meta name="keywords" content="personal site blog portfolio stefk">
+    <meta property="og:title" content="stefk - Stef K">
+    <meta property="og:site_name" content="stefk">
     <meta property="og:locale" content="en_US">
     <meta property="og:url" content="{{url('/')}}">
     <meta property="og:description" content="Stef's personal space on web including info, blog and portfolio">
