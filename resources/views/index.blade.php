@@ -68,11 +68,7 @@
                                         have earned while working full time in an unrelated sector.
                                     </p>
                                     <p>
-                                        You can contact me using the <a href="{{route('contact')}}">contact page</a> or at
-                                        <a href="https://imaginebinary.io" target="_blank"
-                                           title="check where I currently work">Imagine Binary</a>
-                                        which is the company I currently work for as a freelancer. It is a software
-                                        development company offering web and mobile development services.
+                                        You can contact me using the <a href="{{route('contact')}}">contact page</a>.
                                     </p>
 
                                     <h3 class="title is-3">About this site</h3>
