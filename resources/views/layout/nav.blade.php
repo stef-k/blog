@@ -32,7 +32,7 @@
           </span>
         </a>
 
-        <a class="nav-item" href="https://twitter.com/iccode" target="_blank" title="me at Twitter">
+        <a class="nav-item" href="https://twitter.com/StefKariotidis" target="_blank" title="me at Twitter">
           <span class="icon">
             <i class="fa fa-twitter"></i>
           </span>

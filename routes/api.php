@@ -17,7 +17,7 @@ Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:api');
 
-Route::group(['middleware' => ['auth:api'], 'prefix' => 'admin'], function(){
+Route::group(['middleware' => ['auth:api'], 'prefix' => 'admin'], function () {
     Route::post('files/upload', 'Admin\FilesController@upload');
     Route::post('files/delete', 'Admin\FilesController@delete');
     Route::get('files/{start?}/{batch?}', 'Admin\FilesController@index');
@@ -46,5 +46,4 @@ Route::group(['middleware' => ['auth:api'], 'prefix' => 'admin'], function(){
     Route::post('security/name/save', 'Admin\SecurityController@saveName');
     Route::post('security/email/save', 'Admin\SecurityController@saveEmail');
     Route::post('security/password/save', 'Admin\SecurityController@savePassword');
-
 });
