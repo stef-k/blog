@@ -40,7 +40,7 @@
 
         <a class="nav-item" href="https://www.instagram.com/s_t.e_f/" target="_blank" title="me at Instagram">
             <span class="icon">
-                    <i class="fa fa-twitter"></i>
+                    <i class="fa fa-instagram"></i>
             </span>
         </a>
     </div>
