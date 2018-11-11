@@ -5,7 +5,7 @@
     <main class="fade-in">
         <div class="container">
             <div class="columns">
-                <div class="column is-full-mobile is-8-desktop is-offset-1-desktop">
+                <div class="column is-full-mobile is-10-desktop is-offset-1-desktop">
                     <h1 class="title is-2 has-text-centered">Posts</h1>
                 </div>
             </div>
@@ -15,7 +15,7 @@
                     @if(count($posts) > 0)
                         @foreach($posts as $post)
                             <div class="columns ">
-                                <div class="column is-full-mobile is-8-desktop is-offset-2-desktop">
+                                <div class="column is-full-mobile is-10-desktop is-offset-1-desktop">
                                     <article class="post-index">
 
                                         <a href="{{ $post->permalink() }}">
