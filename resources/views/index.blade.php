@@ -47,6 +47,7 @@
                                         <span class="tag is-primary m-t">Python</span>
                                         <span class="tag is-primary m-t">Django</span>
                                         <span class="tag is-primary m-t">Ionic</span>
+                                        <span class="tag is-primary m-t">Node.js</span>
                                         <span class="tag is-primary m-t">AdonisJS</span>
                                     </p>
                                 </div>
